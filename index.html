@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./bootstrap-4.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/estilos.css">  
+</head>
+<body>
+
+  <div class="container m-5">
+    <div class="row justify-content-center">
+           <div class="col-sm-9 col-xl-9">
+
+                 <div class="card">
+
+                    <div class="card-header d-flex justify-content-between align-items-center bg-dark">
+                       Registro Minecon</div>                         
+                      <div class="card-body">                            
+                        <form>
+                            <div class="form-group">
+                              <label for="nombre">Nombre</label>
+                              <input type="text" class="form-control" id="nombre" placeholder="Nombres y Apellidos">
+                            </div>
+                            <div class="form-group">
+                              <label for="genero">Genero</label>
+                              <select class="form-control" id="genero">
+                                <option value="">Seleccione Genero</option>
+                                <option value="mujer">Mujer</option> 
+                                <option value="hombre">Hombre</option>             
+                              </select>
+                            </div>      
+                            <div class="form-group">
+                                <label for="edad" >Edad</label>
+                                <input type="number" class="form-control" id="edad" placeholder="Edad">
+                              </div>
+                              <div class="form-group">
+                                <label for="nt" >Numero Telefonico</label>
+                                <input type="number" class="form-control" id="nt" placeholder="Numero Telefonico">
+                              </div>
+                              <div class="form-group">
+                                <label for="descuento">¿Tiene Membresia?</label>
+                                <select class="form-control" id="descuento">
+                                  <option value="">Si o No</option>
+                                  <option value="si">Si</option> 
+                                  <option value="no">No</option>             
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="regalo">¿Ya había asistido al evento?</label>
+                                <select class="form-control" id="regalo">
+                                  <option value="">Escoja la opcion</option>
+                                  <option value="pm">Primera vez</option> 
+                                  <option value="yh">Ya había asistido</option>             
+                                </select>
+                              </div> 
+                          </form> 
+                    
+                        <input type="button" class="btn btn-primary" value="Enviar" onclick="validacion()"></input>
+
+                     </div>
+                 </div>
+           </div>
+    </div>
+ </div>
+
+
+    
+    <script>
+
+      function validacion() {
+
+        let nombre = document.getElementById('nombre').value   
+        let genero = document.getElementById('genero').value
+        let edad = document.getElementById('edad').value
+        let nt = document.getElementById('nt').value
+        let descuento = document.getElementById('descuento').value
+        let regalo = document.getElementById('regalo').value
+
+         if(edad<12){
+           alert('No cumple la edad')
+         }else{
+            alert('Cumple la edad')
+
+             if(genero=="hombre"){
+               alert('Debes pagar 80000')
+             }else{
+                 alert('Debes pagar 60000')                                 
+              } 
+
+              if(descuento=="si"){
+               alert('Tiene descuento de 10%')
+             }else{
+                 alert('No tiene descuento')     
+             } 
+
+             if(regalo=="pm"){
+               alert('No recibe regalo')
+             }else{
+                 alert('Recibe regalo')                                 
+              } 
+          }     
+        
+      }
+
+   </script> 
+
+
+    <script  src="./js/javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>     
+    
+</body>
+</html>
